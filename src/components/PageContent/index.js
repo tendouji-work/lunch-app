@@ -6,21 +6,8 @@ import { updateData } from '../../actions';
 import Wrapper from '../Wrapper';
 
 
-function withRedux(WrappedComponent, pageClassName) {
+function withWrapper(WrappedComponent, pageClassName) {
     class MainWrapper extends Component {
-        constructor(props) {
-            super(props);
-        }
-
-        componentDidMount() {
-        }
-
-        componentDidUpdate(prevProps) {
-        }
-
-        componentWillUnmount() {
-        }
-
         render() {
             const {
                 appState,
@@ -61,7 +48,7 @@ function withRedux(WrappedComponent, pageClassName) {
     return connect(mapStateToProps, mapDispatchToProps)(MainWrapper);
 };
 
-export default withRedux;
+export default withWrapper;
 
 
 

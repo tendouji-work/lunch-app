@@ -4,7 +4,7 @@ import {
 
 
 const defaultAppState = {
-    pageData: {}
+    appData: {}
 };
 
 export const appStateReducer = (state = defaultAppState, action) => {
@@ -12,8 +12,8 @@ export const appStateReducer = (state = defaultAppState, action) => {
         case UPDATE_DATA:
             return {
                 ...state,
-                pageData: {
-                    ...state.pageData,
+                appData: {
+                    ...state.appData,
                     ...action.data
                 }
             };

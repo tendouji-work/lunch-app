@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
-import { Link } from 'react-router-dom';
-
 import Wrapper from '../Wrapper';
 import {
     colorGray,
@@ -12,19 +10,6 @@ import {
 
 
 class HeaderBar extends Component {
-    constructor(props) {
-        super(props);
-    }
-
-    componentDidMount() {
-    }
-
-    componentDidUpdate(prevProps) {
-    }
-
-    componentWillUnmount() {
-    }
-
     render() {
         const { customClassName } = this.props;
 
@@ -35,19 +20,7 @@ class HeaderBar extends Component {
             ].join('')}>
                 <Wrapper className={'header-wrapper'}>
                     <div className="logo">LA</div>
-                    <nav>
-                        <ul>
-                            <li>
-                                <Link to="/">Home</Link>
-                            </li>
-                            <li>
-                                <Link to="/about">About</Link>
-                            </li>
-                            <li>
-                                <Link to="/topics">Topics</Link>
-                            </li>
-                        </ul>
-                    </nav>
+                    <div className="title">FourSquare Lunch App</div>
                 </Wrapper>
             </HeaderBarWrapper>
         );
@@ -81,27 +54,7 @@ const HeaderBarWrapper = styled.header`
         align-items: center;
     }
     
-    & nav {
+    & title {
         height: 100%;
-        
-        & > ul {
-            margin: 0;
-            padding: 0;
-            list-style: none;
-            height: 100%;
-            
-            & > li {
-                display: inline-block;
-                height: 100%;
-                line-height: ${headerHeight}px;
-            }
-        }
-        
-        & a {
-            display: inline-block;
-            padding: 0 1rem;    
-            text-decoration: none;
-            color: ${fontColor};
-        }
     }
 `;
