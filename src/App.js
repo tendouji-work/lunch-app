@@ -1,28 +1,38 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter as Router, Route } from "react-router-dom";
+import HeaderBar from './components/HeaderBar';
+import Home from './pages/Home';
+
 
 class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
-    );
-  }
+    render() {
+        return (
+            <div className="component-app">
+                <Router>
+                    <React.Fragment>
+                        <HeaderBar />
+                        <Route exact path={`/`} component={Home} />
+                        <Route path={`/about`} component={About} />
+                        <Route path={`/topics`} component={Topics} />
+                    </React.Fragment>
+                </Router>
+            </div>
+        );
+    }
 }
 
 export default App;
+
+/** NOTE: temporary component */
+
+const About = () => (
+    <div>
+        <h2>About</h2>
+    </div>
+);
+
+const Topics = () => (
+    <div>
+        <h2>Topics</h2>
+    </div>
+);
